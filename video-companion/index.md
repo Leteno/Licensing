@@ -78,6 +78,29 @@ If the current video does not expose a subtitle track, the AI
 features are simply unavailable for that video — Video Companion
 does not attempt to transcribe the audio itself.
 
+### Automatic AI prefetch (off by default)
+
+Video Companion ships with three optional **automatic** AI actions:
+
+- On a cooking video, generate a recipe brief about 60 seconds
+  before the video ends.
+- On an educational / lecture video, generate a content briefing
+  about 90 seconds before the video ends.
+- On an educational / lecture video, generate a short multiple-choice
+  quiz from the content about 45 seconds before the video ends.
+
+**All are shipped disabled.** On a fresh install, none of them will run
+until you opt in. The first time you open the floating panel, a small
+in-panel banner asks whether you want to enable them; if you click
+"Not now" they stay off and the banner does not reappear. You can
+also turn any job on or off individually at any time from the
+"Manage" link in the panel's Queue tab (which opens our settings page
+on the Jobs section).
+
+When an automatic action does run, it sends the same data described
+in the "What happens when you trigger an AI action" section above —
+no different from a manual click on the same action.
+
 ### AI provider
 
 The AI actions run on a third-party large-language-model provider that
@@ -238,6 +261,24 @@ Video Companion **不会**下载视频本身，**不会**录制您的屏幕或�
 
 如果当前视频没有提供字幕轨道，相关 AI 功能在该视频上将不可用 ——
 Video Companion 不会尝试自行转录音频。
+
+### 自动 AI 预生成（默认关闭）
+
+Video Companion 内置了三个**自动**触发的 AI 操作：
+
+- 在烹饪类视频结束前约 60 秒，自动整理一份菜谱卡片。
+- 在教育类 / 讲座类视频结束前约 90 秒，自动生成一份内容快报。
+- 在教育类 / 讲座类视频结束前约 45 秒，自动根据视频内容生成一组
+  选择题测验。
+
+**这三个功能在发布版本中默认关闭。** 全新安装后，它们都不会运行，
+除非您主动启用。您第一次打开浮动面板时，会看到一条小提示询问是否
+启用；点击"以后再说"后它们保持关闭，且该提示不会再次弹出。您也可以
+随时通过面板 Queue（队列）页签内的"管理"链接，单独开启或关闭其中
+任意一个 Job（该链接会打开我们的设置页面并定位到 Jobs 部分）。
+
+当自动操作真正运行时，发送的数据与上文"您触发 AI 操作时发生的事"
+描述的完全一致 —— 与您手动点击同一操作没有区别。
 
 ### AI 服务商
 
