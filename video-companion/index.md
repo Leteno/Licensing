@@ -48,6 +48,25 @@ If the current video does not expose a subtitle track, the AI features
 will simply be unavailable for that video — Video Companion does not
 attempt to transcribe the audio itself.
 
+### Text-to-Speech (currently disabled in the published build)
+
+Video Companion ships with a Text-to-Speech (TTS) module that can read
+a subtitle line aloud through Microsoft Edge's free Read Aloud
+service. **In the current Chrome Web Store release this feature is
+intentionally hidden**: the underlying code is bundled with the
+extension but the user-facing entry point is removed, so the TTS
+WebSocket is never opened in normal use. The module is retained so it
+can be enabled in a future release without re-requesting permissions.
+
+If and when TTS is exposed in a future build, the behavior will be:
+the extension opens a WebSocket connection to
+`wss://speech.platform.bing.com` only at the moment you press the
+"speak this" control on a subtitle line, sends that single line of
+subtitle text plus the chosen voice and rate, receives synthesized
+audio, plays it back, and closes the connection. No audio is ever
+recorded from your microphone, and no subtitle text is sent to the
+TTS service unless you press the control.
+
 ### AI provider
 
 The AI actions run on a third-party large-language-model provider. Your
@@ -146,6 +165,20 @@ Video Companion **不会**下载视频本身，**不会**录制您的屏幕或�
 
 如果当前视频没有提供字幕轨道，相关 AI 功能在该视频上将不可用 ——
 Video Companion 不会尝试自行转录音频。
+
+### 文本转语音（当前已在发布版本中隐藏）
+
+Video Companion 内置了一个文本转语音（TTS）模块，可以通过 Microsoft
+Edge 的免费朗读服务把一条字幕读出来。**在当前 Chrome 应用商店发布的
+版本中，此功能被刻意隐藏**：相关代码仍随扩展一同打包，但用户可见的
+入口已被移除，因此在正常使用过程中不会建立 TTS WebSocket 连接。保留
+该模块是为了未来版本可以直接启用，无需重新申请权限。
+
+未来版本如果重新开放此功能，其行为如下：当且仅当您点击某条字幕旁的
+"朗读"按钮时，扩展才会与 `wss://speech.platform.bing.com` 建立
+WebSocket 连接，将该条字幕文本以及所选发音人和语速发送过去，接收
+合成后的音频并播放，然后关闭连接。我们永远不会通过麦克风录音，也不
+会在您未点击该按钮的情况下把字幕文本发送给 TTS 服务。
 
 ### AI 服务商
 
