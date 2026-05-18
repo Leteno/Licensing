@@ -1,0 +1,22 @@
+# Site-wide Jekyll config.
+#
+# Intentionally minimal: there is no site-wide title, description, or
+# landing page. Each product lives in its own top-level folder and is
+# rendered as its own standalone page. Visitors should reach each
+# product's privacy policy directly via its full URL — there is no
+# index that lists all products together.
+
+theme: jekyll-theme-cayman
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
